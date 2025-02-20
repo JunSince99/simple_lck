@@ -25,3 +25,24 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/lightmode/BNK FEARX.png
+    - assets/lightmode/DN Freecs.png
+    - assets/lightmode/Dplus KIA.png
+    - assets/lightmode/DRX.png
+    - assets/lightmode/Gen.G.png
+    - assets/lightmode/Hanwha Life Esports.png
+    - assets/lightmode/KT Rolster.png
+    - assets/lightmode/Nongshim RedForce.png
+    - assets/lightmode/OKSavingsBank BRION.png
+    - assets/lightmode/T1.png
+    - assets/darkmode/BNK FEARX.png
+    - assets/darkmode/DN Freecs.png
+    - assets/darkmode/Dplus KIA.png
+    - assets/darkmode/DRX.png
+    - assets/darkmode/Gen.G.png
+    - assets/darkmode/Hanwha Life Esports.png
+    - assets/darkmode/KT Rolster.png
+    - assets/darkmode/Nongshim RedForce.png
+    - assets/darkmode/OKSavingsBank BRION.png
+    - assets/darkmode/T1.png
