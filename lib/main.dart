@@ -4,6 +4,10 @@ import 'package:intl/intl.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:intl/date_symbol_data_local.dart';
+import 'firebase/firebase_options.dart';
+import 'firebase/firebase_notifications.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'manage_fetching.dart';
 
@@ -30,9 +34,29 @@ Map<String, String> tabInKr = {
   "Finals" : "결승전"
 };
 
+Future<void> _requestNotificationPermission() async {
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
+  print('User granted permission: ${settings.authorizationStatus}');
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting('ko');
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FcmService.initialize();
+
+  FirebaseMessaging.instance.getToken().then((token) {
+  });
+
+  await _requestNotificationPermission();
+
   runApp(const MyApp());
 }
 

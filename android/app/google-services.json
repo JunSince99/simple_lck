@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "704499021035",
+    "project_id": "lck-notifications",
+    "storage_bucket": "lck-notifications.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704499021035:android:253d6d0455e63607097aae",
+        "android_client_info": {
+          "package_name": "com.junsince99.simple_lck"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrfhvJItT_sV9vKQVyDtLsZX9WIdt-1d0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
