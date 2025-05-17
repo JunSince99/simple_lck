@@ -14,7 +14,7 @@ class ManageFetching {
       'limit': 'max',
       'tables': 'MatchSchedule=MS',
       'fields': 'MS.OverviewPage, MS.Team1, MS.Team2, MS.Team1Score, MS.Team2Score, MS.DateTime_UTC, MS.Tab',
-      'where': 'MS._pageName="$tournamentName"',
+      'where' : 'MS._pageName LIKE "$tournamentName%"',
       'order_by': 'MS.N_Page, MS.N_MatchInPage',
     };
 

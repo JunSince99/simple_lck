@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "704499021035",
-    "project_id": "lck-notifications",
-    "storage_bucket": "lck-notifications.firebasestorage.app"
+    "project_number": "122720023297",
+    "project_id": "lckalert-45a81",
+    "storage_bucket": "lckalert-45a81.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:704499021035:android:253d6d0455e63607097aae",
+        "mobilesdk_app_id": "1:122720023297:android:353e4b5f90b5604578a100",
         "android_client_info": {
           "package_name": "com.junsince99.simple_lck"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCrfhvJItT_sV9vKQVyDtLsZX9WIdt-1d0"
+          "current_key": "AIzaSyBgXm7EACYpjNBhQMEPgc0V8KU72LPlZBc"
         }
       ],
       "services": {

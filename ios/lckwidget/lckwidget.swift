@@ -1,84 +1,68 @@
-//
-//  lckwidget.swift
-//  lckwidget
-//
-//  Created by Jun on 5/17/25.
-//
-
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+// 1. 데이터 모델
+struct MatchEntry: TimelineEntry {
+    let date: Date
+    let team1: String
+    let team2: String
+    let matchTime: String
+}
+
+// 2. 데이터 제공자
+struct LckWidgetProvider: TimelineProvider {
+    func placeholder(in context: Context) -> MatchEntry {
+        MatchEntry(date: Date(), team1: "T1", team2: "GEN", matchTime: "18:00")
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
+    func getSnapshot(in context: Context, completion: @escaping (MatchEntry) -> Void) {
+        completion(loadData())
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+    func getTimeline(in context: Context, completion: @escaping (Timeline<MatchEntry>) -> Void) {
+        let entry = loadData()
+        let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
     }
 
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
+    private func loadData() -> MatchEntry {
+        let defaults = UserDefaults(suiteName: "group.com.JunSince99.simplelck")
+        let team1 = defaults?.string(forKey: "match1_team1") ?? "팀1"
+        let team2 = defaults?.string(forKey: "match1_team2") ?? "팀2"
+        let time  = defaults?.string(forKey: "match1_time")  ?? "--:--"
+        return MatchEntry(date: Date(), team1: team1, team2: team2, matchTime: time)
+    }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
-}
-
-struct lckwidgetEntryView : View {
-    var entry: Provider.Entry
+// 3. 위젯 UI
+struct LckWidgetEntryView: View {
+    var entry: MatchEntry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+        VStack(alignment: .leading) {
+            Text("다음 경기")
+                .font(.headline)
+            Text("\(entry.team1) vs \(entry.team2)")
+                .font(.title2)
+                .bold()
+            Text("시작 시간: \(entry.matchTime)")
+                .font(.caption)
         }
+        .padding()
     }
 }
 
-struct lckwidget: Widget {
-    let kind: String = "lckwidget"
+// 4. 위젯 등록
+@main
+struct LckWidget: Widget {
+    let kind: String = "LckWidget"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                lckwidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                lckwidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+        StaticConfiguration(kind: kind, provider: LckWidgetProvider()) { entry in
+            LckWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("오늘의 LCK")
+        .description("다음 경기 정보를 보여줍니다.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
-}
-
-#Preview(as: .systemSmall) {
-    lckwidget()
-} timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
 }
