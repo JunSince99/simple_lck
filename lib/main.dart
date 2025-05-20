@@ -32,7 +32,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  await HomeWidget.setAppGroupId('group.com.junsince99.simplelck');
+  await HomeWidget.setAppGroupId('group.com.JunSince99.simplelck');
   await initializeDateFormatting('ko');
   runApp(const MyApp());
 }

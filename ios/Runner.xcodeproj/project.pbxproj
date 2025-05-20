@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,8 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		ADCD02C5083B3B6CB5708600 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8883DF7830BEE5D8465053F6 /* Pods_Runner.framework */; };
-		BFF7F6122DD8BF9300B33437 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF7F6112DD8BF9200B33437 /* WidgetKit.framework */; };
-		BFF7F6142DD8BF9300B33437 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF7F6132DD8BF9300B33437 /* SwiftUI.framework */; };
+		BFB731712DDB466200CC37EA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF7F6112DD8BF9200B33437 /* WidgetKit.framework */; };
+		BFB731722DDB466200CC37EA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF7F6132DD8BF9300B33437 /* SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +28,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
 			remoteInfo = Runner;
-		};
-		BFF7F6212DD8BF9500B33437 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BFF7F60F2DD8BF9200B33437;
-			remoteInfo = lckwidgetExtension;
 		};
 		BFF7F6B62DD8CB8100B33437 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -54,16 +47,6 @@
 			files = (
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFF7F6242DD8BF9500B33437 /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -91,8 +74,9 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB731702DDB466200CC37EA /* LckWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LckWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB731872DDB467C00CC37EA /* LckWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LckWidgetExtension.entitlements; sourceTree = "<group>"; };
 		BFB7FD1D2D686EF400964AB3 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
-		BFF7F6102DD8BF9200B33437 /* lckwidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = lckwidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF7F6112DD8BF9200B33437 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		BFF7F6132DD8BF9300B33437 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		BFF7F62A2DD8BFF100B33437 /* lckwidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lckwidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -100,8 +84,40 @@
 		DE845CF9275334968EB89056 /* Pods-RunnerTests.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.profile.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.profile.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BFB731812DDB466400CC37EA /* Exceptions for "LckWidget" folder in "LckWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BFB7316F2DDB466200CC37EA /* LckWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BFF7F6152DD8BF9300B33437 /* lckwidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = lckwidget; sourceTree = "<group>"; };
+		BFB731732DDB466200CC37EA /* LckWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BFB731812DDB466400CC37EA /* Exceptions for "LckWidget" folder in "LckWidgetExtension" target */,
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = LckWidget;
+			sourceTree = "<group>";
+		};
+		BFF7F6152DD8BF9300B33437 /* lckwidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = lckwidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +129,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFF7F60D2DD8BF9200B33437 /* Frameworks */ = {
+		BFB7316D2DDB466200CC37EA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF7F6142DD8BF9300B33437 /* SwiftUI.framework in Frameworks */,
-				BFF7F6122DD8BF9300B33437 /* WidgetKit.framework in Frameworks */,
+				BFB731722DDB466200CC37EA /* SwiftUI.framework in Frameworks */,
+				BFB731712DDB466200CC37EA /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,10 +184,12 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				BFB731872DDB467C00CC37EA /* LckWidgetExtension.entitlements */,
 				BFF7F62A2DD8BFF100B33437 /* lckwidgetExtension.entitlements */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				BFF7F6152DD8BF9300B33437 /* lckwidget */,
+				BFB731732DDB466200CC37EA /* LckWidget */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				DE273A9967844DE2177976D0 /* GoogleService-Info.plist */,
@@ -185,7 +203,7 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
-				BFF7F6102DD8BF9200B33437 /* lckwidgetExtension.appex */,
+				BFB731702DDB466200CC37EA /* LckWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,12 +269,11 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				31F1FBC7789EFB03D84E229C /* [CP] Embed Pods Frameworks */,
-				BFF7F6242DD8BF9500B33437 /* Embed Foundation Extensions */,
+				BFB731CD2DDB529200CC37EA /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BFF7F6222DD8BF9500B33437 /* PBXTargetDependency */,
 				BFF7F6B72DD8CB8100B33437 /* PBXTargetDependency */,
 			);
 			name = Runner;
@@ -264,24 +281,24 @@
 			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BFF7F60F2DD8BF9200B33437 /* lckwidgetExtension */ = {
+		BFB7316F2DDB466200CC37EA /* LckWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFF7F6292DD8BF9500B33437 /* Build configuration list for PBXNativeTarget "lckwidgetExtension" */;
+			buildConfigurationList = BFB731822DDB466400CC37EA /* Build configuration list for PBXNativeTarget "LckWidgetExtension" */;
 			buildPhases = (
-				BFF7F60C2DD8BF9200B33437 /* Sources */,
-				BFF7F60D2DD8BF9200B33437 /* Frameworks */,
-				BFF7F60E2DD8BF9200B33437 /* Resources */,
+				BFB7316C2DDB466200CC37EA /* Sources */,
+				BFB7316D2DDB466200CC37EA /* Frameworks */,
+				BFB7316E2DDB466200CC37EA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				BFF7F6152DD8BF9300B33437 /* lckwidget */,
+				BFB731732DDB466200CC37EA /* LckWidget */,
 			);
-			name = lckwidgetExtension;
-			productName = lckwidgetExtension;
-			productReference = BFF7F6102DD8BF9200B33437 /* lckwidgetExtension.appex */;
+			name = LckWidgetExtension;
+			productName = LckWidgetExtension;
+			productReference = BFB731702DDB466200CC37EA /* LckWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -303,7 +320,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
 					};
-					BFF7F60F2DD8BF9200B33437 = {
+					BFB7316F2DDB466200CC37EA = {
 						CreatedOnToolsVersion = 16.3;
 					};
 				};
@@ -323,7 +340,7 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
-				BFF7F60F2DD8BF9200B33437 /* lckwidgetExtension */,
+				BFB7316F2DDB466200CC37EA /* LckWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -348,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFF7F60E2DD8BF9200B33437 /* Resources */ = {
+		BFB7316E2DDB466200CC37EA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,13 +383,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -408,7 +421,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		A68FA5B6037B04F4FD92C253 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -454,6 +467,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BFB731CD2DDB529200CC37EA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh\nmkdir -p \"$TARGET_DIR\"\ncp -r \"$APP_EXTENSION\" \"$TARGET_DIR\"\n";
+			shellScript = "if [ \"$CONFIGURATION\" != \"Release\" ]; then\n  echo \"⚠️ Skipping appex copy — only runs in Release/Archive builds\"\n  exit 0\nfi\n\nAPP_EXTENSION=\"${BUILT_PRODUCTS_DIR}/LckWidgetExtension.appex\"\nTARGET_DIR=\"${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/PlugIns\"\n\necho \"🔍 Trying to copy appex from: $APP_EXTENSION\"\n\nif [ -d \"$APP_EXTENSION\" ]; then\n  mkdir -p \"$TARGET_DIR\"\n  cp -R \"$APP_EXTENSION\" \"$TARGET_DIR\"\n  echo \"✅ appex copied to PlugIns\"\nelse\n  echo \"❌ appex not found: $APP_EXTENSION\"\n  ls -l \"${BUILT_PRODUCTS_DIR}/\"\n  exit 1\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -474,7 +504,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFF7F60C2DD8BF9200B33437 /* Sources */ = {
+		BFB7316C2DDB466200CC37EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,14 +519,8 @@
 			target = 97C146ED1CF9000F007C117D /* Runner */;
 			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
 		};
-		BFF7F6222DD8BF9500B33437 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BFF7F60F2DD8BF9200B33437 /* lckwidgetExtension */;
-			targetProxy = BFF7F6212DD8BF9500B33437 /* PBXContainerItemProxy */;
-		};
 		BFF7F6B72DD8CB8100B33437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BFF7F60F2DD8BF9200B33437 /* lckwidgetExtension */;
 			targetProxy = BFF7F6B62DD8CB8100B33437 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -545,6 +569,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -553,6 +578,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -581,7 +607,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
@@ -671,6 +696,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -679,6 +705,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -728,6 +755,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -736,6 +764,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -766,7 +795,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
@@ -791,7 +819,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
@@ -807,7 +834,7 @@
 			};
 			name = Release;
 		};
-		BFF7F6252DD8BF9500B33437 /* Debug */ = {
+		BFB7317E2DDB466400CC37EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -818,15 +845,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = lckwidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LckWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = lckwidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = lckwidget;
+				INFOPLIST_FILE = LckWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LckWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -838,9 +864,9 @@
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsince99.simpleLck.lckwidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsince99.simpleLck.LckWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -849,7 +875,7 @@
 			};
 			name = Debug;
 		};
-		BFF7F6262DD8BF9500B33437 /* Release */ = {
+		BFB7317F2DDB466400CC37EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -860,15 +886,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = lckwidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LckWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = lckwidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = lckwidget;
+				INFOPLIST_FILE = LckWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LckWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -879,16 +904,16 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsince99.simpleLck.lckwidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsince99.simpleLck.LckWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		BFF7F6272DD8BF9500B33437 /* Profile */ = {
+		BFB731802DDB466400CC37EA /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -899,15 +924,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = lckwidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LckWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L6K4NC2HD6;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = lckwidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = lckwidget;
+				INFOPLIST_FILE = LckWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LckWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -918,9 +942,9 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junsince99.simpleLck.lckwidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junsince99.simpleLck.LckWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -960,12 +984,12 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFF7F6292DD8BF9500B33437 /* Build configuration list for PBXNativeTarget "lckwidgetExtension" */ = {
+		BFB731822DDB466400CC37EA /* Build configuration list for PBXNativeTarget "LckWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFF7F6252DD8BF9500B33437 /* Debug */,
-				BFF7F6262DD8BF9500B33437 /* Release */,
-				BFF7F6272DD8BF9500B33437 /* Profile */,
+				BFB7317E2DDB466400CC37EA /* Debug */,
+				BFB7317F2DDB466400CC37EA /* Release */,
+				BFB731802DDB466400CC37EA /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
